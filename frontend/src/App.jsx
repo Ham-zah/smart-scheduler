@@ -7,7 +7,7 @@ function App() {
   import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
   useEffect(() => {
-    fetch(`${API_BASE}api/hello`)
+    fetch(`${API_BASE}/api/hello`)
       .then((r) => r.json())
       .then((data) => setMsg(data.message))
       .catch((err) => {
