@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 function App() {
   const [msg, setMsg] = useState("…loading");
 
+  const API_BASE =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
   useEffect(() => {
-    fetch("/api/hello")
+    fetch(`${API_BASE}/api/hello`)
       .then((r) => r.json())
       .then((data) => setMsg(data.message))
       .catch((err) => {
